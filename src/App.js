@@ -14,23 +14,15 @@ import Title from "./Components/Title/Title";
 import PostDetails from "./Components/PostDetails/PostDetails";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Navbar></Navbar>,
-      children: [
-        {
-          path: "/post/:postId",
-          loader: async ({ params }) => {
-            return fetch(
-              `https://jsonplaceholder.typicode.com/posts/${params.postId}`
-            );
-          },
-          element: <PostDetails></PostDetails>,
-        },
-      ],
-    },
-  ]);
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/post/:postId",
+  // loader: async ({ params }) => {
+  //   return fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
+  // },
+  //     element: <PostDetails></PostDetails>,
+  //   },
+  // ]);
   const [images, setImages] = useState([]);
   const [term, setTerm] = useState("");
   useEffect(() => {
@@ -45,7 +37,7 @@ function App() {
   }, [term]);
   return (
     <div>
-      <RouterProvider router={router}></RouterProvider>
+      {/* <RouterProvider router={router}></RouterProvider> */}
       <BrowserRouter>
         <Navbar></Navbar>
         <ImageSearch searchText={(text) => setTerm(text)}></ImageSearch>
@@ -58,7 +50,10 @@ function App() {
             element={
               <div className='grid sm:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-4'>
                 {images.map((image) => (
-                  <Banner key={image.id} image={image}></Banner>
+                  <Banner
+                    key={image.id}
+                    image={image}
+                    link='/post/:postId'></Banner>
                 ))}
               </div>
             }></Route>

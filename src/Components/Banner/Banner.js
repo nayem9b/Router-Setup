@@ -31,13 +31,7 @@ const Banner = ({ image }) => {
             <span className='text-purple-400'> Comments:</span> {image.comments}
           </p>
 
-          <div className='card-actions justify-end'>
-            {/* {tags.map((tag, index) => (
-              <div key={index} className='badge badge-outline'>
-                #{tag}
-              </div>
-            ))} */}
-          </div>
+          <div className='card-actions justify-end'></div>
 
           <NavLink
             exact
