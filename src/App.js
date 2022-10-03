@@ -75,9 +75,7 @@ function App() {
           element={
             <div className='grid sm:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-4'>
               {images.map((image) => (
-                <PostDetails>
-                  key={image.id} image={image}
-                </PostDetails>
+                <PostDetails key={image.id} image={image}></PostDetails>
               ))}
             </div>
           }></Route>

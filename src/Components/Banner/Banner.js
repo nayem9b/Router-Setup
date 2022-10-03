@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Banner = ({ image }) => {
   const navigate = useNavigate();
+  const { id } = image;
   //   const tags = image.tags.split(",");
   return (
     <div>
@@ -37,13 +38,14 @@ const Banner = ({ image }) => {
               </div>
             ))} */}
           </div>
-          <button
-            className='btn btn-primary'
-            onClick={() => {
-              navigate("/post/${userId}");
-            }}>
-            See More Details
-          </button>
+
+          <NavLink
+            exact
+            to={`/post/${id}`}
+            className='mx-6 hover:text-orange-300'>
+            {" "}
+            <button className='btn btn-primary'>See More Details</button>
+          </NavLink>
         </div>
       </div>
     </div>
