@@ -15,7 +15,7 @@ const Banner = ({ image }) => {
           <h3 className='card-title'>Photo By {image.user}</h3>
           <div className='avatar'>
             <div className='w-9 rounded-full'>
-              <img src={image.userImageURL} alt='' />
+              <img className='h-6 w-6' src={image.userImageURL} alt='' />
             </div>
           </div>
           <p>
