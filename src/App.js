@@ -11,6 +11,7 @@ import ImageSearch from "./Components/ImageSearch/ImageSearch";
 import { useEffect, useState } from "react";
 import Banner from "./Components/Banner/Banner";
 import Title from "./Components/Title/Title";
+import PostDetails from "./Components/PostDetails/PostDetails";
 
 function App() {
   const router = createBrowserRouter([
@@ -70,22 +71,24 @@ function App() {
           }></Route>
         <Route path='/title' element={<Title></Title>}></Route>
         <Route
-          path='/title/:titleId'
+          path='/post/:postId'
           element={
             <div className='grid sm:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-4'>
               {images.map((image) => (
-                <Banner key={image.id} image={image}></Banner>
+                <PostDetails>
+                  key={image.id} image={image}
+                </PostDetails>
               ))}
             </div>
           }></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='*' element={<Error></Error>}></Route>
-        <Route
+        {/* <Route
           path='/teams/:teamId'
           loader={({ params }) => {
             return params.teamId;
           }}
-        />
+        /> */}
         ;
       </Routes>{" "}
       {/* // <RouterProvider router={router}></RouterProvider> */}

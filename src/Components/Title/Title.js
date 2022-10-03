@@ -3,11 +3,10 @@ import { useParams } from "react-router-dom";
 import { useLoaderData, useNavigate } from "react-router-dom";
 const Title = ({ image, downloads }) => {
   const params = useParams();
-  const { name } = params;
-  console.log(name);
+  const { titleId } = params;
   return (
     <div>
-      <h1>Hi everybody{image}</h1>
+      <h1>Hi everybody{titleId}</h1>
     </div>
   );
 };

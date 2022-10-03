@@ -40,7 +40,7 @@ const Banner = ({ image }) => {
           <button
             className='btn btn-primary'
             onClick={() => {
-              navigate("/title");
+              navigate("/post/${userId}");
             }}>
             See More Details
           </button>
